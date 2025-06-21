@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-import '../../../../../headphones/framework/headphones_settings.dart';
-import '../../../../../headphones/huawei/settings.dart';
-import '../../../../common/list_tile_radio.dart';
+part of 'exports.dart';
 
 class EqualizerSection extends StatelessWidget {
   final HeadphonesSettings<HuaweiFreeBuds5iSettings> headphones;

@@ -1,7 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+
+import '../../../l10n/app_localizations.dart';
 
 class FreebuddyIntroduction extends StatelessWidget {
   const FreebuddyIntroduction({super.key});

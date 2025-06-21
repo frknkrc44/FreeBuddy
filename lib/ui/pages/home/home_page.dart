@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../../l10n/app_localizations.dart';
 import '../../app_settings.dart';
 import '../../common/headphones_connection_ensuring_overlay.dart';
 import 'controls/headphones_controls_widget.dart';
@@ -40,19 +40,24 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context)!;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(l.appTitle),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () => Navigator.of(context).pushNamed('/settings'),
+    return HeadphonesConnectionEnsuringOverlay(
+      builder: (_, headphones) => Scaffold(
+        appBar: AppBar(
+          title: StreamBuilder(
+            stream: headphones.bluetoothAlias,
+            builder: (_, snap) => Text(
+              snap.data ?? headphones.bluetoothName,
+            ),
           ),
-        ],
-      ),
-      body: Center(
-        child: HeadphonesConnectionEnsuringOverlay(
-          builder: (_, h) => HeadphonesControlsWidget(headphones: h),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.settings),
+              onPressed: () => Navigator.of(context).pushNamed('/settings'),
+            ),
+          ],
+        ),
+        body: Center(
+          child: HeadphonesControlsWidget(headphones: headphones),
         ),
       ),
     );

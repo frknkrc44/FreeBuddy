@@ -42,7 +42,7 @@ dependencies:
   permission_handler: ^11.3.0
   dynamic_color: ^1.7.0
   home_widget: ^0.7.0
-  workmanager: ^0.5.0
+  workmanager: ^0.6.0
   flutter_native_splash: ^2.4.0
 
   # Logic libs
@@ -60,7 +60,7 @@ dependencies:
   # Flutter/ui stuff
   flutter_localizations:
     sdk: flutter
-  intl: ^0.19.0
+  intl: ^0.20.2
   ## This is low-level, but I *do* use it to mix colors here and there
   material_color_utilities: ^0.11.0
   material_symbols_icons: ^4.2801.0

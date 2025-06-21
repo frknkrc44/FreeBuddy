@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../../headphones/framework/anc.dart';
 import '../../../../headphones/framework/bluetooth_headphones.dart';
@@ -7,6 +6,7 @@ import '../../../../headphones/framework/dual_connect.dart';
 import '../../../../headphones/framework/headphones_info.dart';
 import '../../../../headphones/framework/headphones_settings.dart';
 import '../../../../headphones/framework/lrc_battery.dart';
+import '../../../../l10n/app_localizations.dart';
 import '../../../theme/layouts.dart';
 import 'anc_card.dart';
 import 'battery_card.dart';
@@ -41,13 +41,6 @@ class HeadphonesControlsWidget extends StatelessWidget {
       child: WindowSizeClass.of(context) == WindowSizeClass.compact
           ? Column(
               children: [
-                StreamBuilder(
-                  stream: headphones.bluetoothAlias,
-                  builder: (_, snap) => Text(
-                    snap.data ?? headphones.bluetoothName,
-                    style: tt.headlineMedium,
-                  ),
-                ),
                 if (headphones is DualConnect) ...[
                   const SizedBox(height: 8),
                   DualConnectCard(headphones as DualConnect),

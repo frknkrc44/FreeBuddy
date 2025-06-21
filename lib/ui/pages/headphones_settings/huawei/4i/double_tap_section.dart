@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
-import '../../../../../headphones/framework/headphones_settings.dart';
-import '../../../../../headphones/huawei/settings.dart';
-import '../../../../common/list_tile_radio.dart';
-import '../../../../common/list_tile_switch.dart';
-import '../../../disabled.dart';
+part of 'exports.dart';
 
 class DoubleTapSection extends StatelessWidget {
   final HeadphonesSettings<HuaweiFreeBuds4iSettings> headphones;

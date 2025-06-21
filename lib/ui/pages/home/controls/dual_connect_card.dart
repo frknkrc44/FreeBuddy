@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../../../../headphones/framework/dual_connect.dart';
+import '../../../../l10n/app_localizations.dart';
 import '../../../common/list_tile_switch.dart';
 import '../../disabled.dart';
 
 class DualConnectCard extends StatelessWidget {
   final DualConnect dualConnect;
-  final ExpansionTileController dcListCtrl = ExpansionTileController();
+  final ExpansibleController dcListCtrl = ExpansibleController();
 
   DualConnectCard(this.dualConnect, {super.key});
 
